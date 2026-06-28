@@ -43,7 +43,7 @@ const CreateEvent = () => {
 
     setSubmitting(true);
     try {
-      const response = await api.post('/api/events', {
+      const response = await api.post('/events', {
         title: title.trim(),
         description: description.trim(),
         venue: venue.trim(),

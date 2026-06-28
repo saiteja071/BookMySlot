@@ -14,7 +14,7 @@ const MyBookings = () => {
 
   const fetchBookings = async () => {
     try {
-      const response = await api.get('/api/bookings/my');
+      const response = await api.get('/bookings/my');
       setBookings(response.data);
     } catch (err) {
       console.error('Error fetching bookings:', err);
@@ -38,7 +38,7 @@ const MyBookings = () => {
     setActionLoading(bookingId);
 
     try {
-      const response = await api.put(`/api/bookings/${bookingId}/cancel`);
+      const response = await api.put(`/bookings/${bookingId}/cancel`);
       setActionSuccess(response.data.message || 'Booking cancelled and refunded successfully.');
       await fetchBookings();
     } catch (err) {

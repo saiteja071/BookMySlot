@@ -26,7 +26,7 @@ const EventDetail = () => {
 
   const fetchEventDetails = async () => {
     try {
-      const response = await api.get(`/api/events/${id}`);
+      const response = await api.get(`/events/${id}`);
       setEvent(response.data.event);
       setNewTotalCapacity(response.data.event.total_capacity);
     } catch (err) {
@@ -57,7 +57,7 @@ const EventDetail = () => {
 
     setBookingLoading(true);
     try {
-      const response = await api.post('/api/bookings', { event_id: parseInt(id, 10), quantity: qty });
+      const response = await api.post('/bookings', { event_id: parseInt(id, 10), quantity: qty });
       setBookingMsg({ type: 'success', text: response.data.message || 'Tickets booked successfully!' });
       setQuantity(1);
       await fetchEventDetails();
@@ -81,7 +81,7 @@ const EventDetail = () => {
 
     setSubmitting(true);
     try {
-      const response = await api.put(`/api/events/${id}/capacity`, { total_capacity: capacityNum });
+      const response = await api.put(`/events/${id}/capacity`, { total_capacity: capacityNum });
       setFormMsg({ type: 'success', text: response.data.message || 'Capacity updated successfully.' });
       await fetchEventDetails();
     } catch (err) {
@@ -98,7 +98,7 @@ const EventDetail = () => {
     }
     setSubmitting(true);
     try {
-      await api.delete(`/api/events/${id}`);
+      await api.delete(`/events/${id}`);
       navigate('/my-events');
     } catch (err) {
       console.error('Error deleting event:', err);

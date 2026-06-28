@@ -13,7 +13,7 @@ const Events = () => {
   useEffect(() => {
     const fetchEvents = async () => {
       try {
-        const response = await api.get('/api/events');
+        const response = await api.get('/events');
         setEvents(response.data);
       } catch (err) {
         console.error('Error fetching events:', err);

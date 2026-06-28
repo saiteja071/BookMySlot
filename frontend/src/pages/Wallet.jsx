@@ -18,13 +18,13 @@ const Wallet = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const fetchTransactions = async () => {
-    const response = await api.get('/api/wallet/transactions');
+    const response = await api.get('/wallet/transactions');
     setTransactions(response.data);
   };
 
   const fetchWalletDetails = async () => {
     try {
-      const balanceRes = await api.get('/api/wallet');
+      const balanceRes = await api.get('/wallet');
       setBalance(Number(balanceRes.data.balance));
       await fetchTransactions();
     } catch (err) {
@@ -98,7 +98,7 @@ const Wallet = () => {
           )}
           <form
             onSubmit={(e) => handleWalletAction(e, {
-              endpoint: '/api/wallet/deposit',
+              endpoint: '/wallet/deposit',
               amount: depositAmount,
               setAmount: setDepositAmount,
               setMsg: setDepositMsg
@@ -131,7 +131,7 @@ const Wallet = () => {
           )}
           <form
             onSubmit={(e) => handleWalletAction(e, {
-              endpoint: '/api/wallet/withdraw',
+              endpoint: '/wallet/withdraw',
               amount: withdrawAmount,
               setAmount: setWithdrawAmount,
               setMsg: setWithdrawMsg

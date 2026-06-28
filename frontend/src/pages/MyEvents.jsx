@@ -13,7 +13,7 @@ const MyEvents = () => {
   useEffect(() => {
     const fetchMyEvents = async () => {
       try {
-        const response = await api.get('/api/events/my/events');
+        const response = await api.get('/events/my/events');
         setEvents(response.data);
       } catch (err) {
         console.error('Error fetching organizer events:', err);
