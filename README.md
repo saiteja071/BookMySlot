@@ -72,6 +72,7 @@ DB_USER=
 DB_PASSWORD=
 DB_NAME=
 DB_SSL= # true | relaxed | leave unset for local MySQL with no SSL
+CIENT_URL= # deployed frontend url
 ```
 
 Start the server:
