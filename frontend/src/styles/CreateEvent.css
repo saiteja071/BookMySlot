@@ -1,0 +1,90 @@
+.create-event-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 64px);
+  background-color: #f5f5f5;
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+.create-event-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+.create-event-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #333333;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.create-event-subtitle {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #666666;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.create-event-alert {
+  margin-bottom: 20px !important;
+}
+
+.create-event-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.half-width {
+  flex: 1;
+}
+
+.plain-field-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  color: #555555;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+}
+
+
+.form-row input[type="date"]:not(:focus):in-range::-webkit-datetime-edit,
+.form-row input[type="date"][value=""]::-webkit-datetime-edit,
+.form-row input[type="time"][value=""]::-webkit-datetime-edit {
+  color: transparent;
+}
+
+.form-row input[type="date"]:focus::-webkit-datetime-edit,
+.form-row input[type="time"]:focus::-webkit-datetime-edit,
+.form-row input[type="date"]:valid::-webkit-datetime-edit,
+.form-row input[type="time"]:valid::-webkit-datetime-edit {
+  color: #333333;
+}
+
+.submit-event-btn {
+  margin-top: 8px !important;
+  text-transform: none !important;
+  font-size: 1rem !important;
+  padding: 12px !important;
+}
